@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мой сайт</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #000;
+        }
+        img {
+            max-width: 90%;
+            max-height: 90vh;
+        }
+    </style>
+</head>
+<body>
+    <!-- Изображение -->
+    <img src="image.jpg" alt="Ваше изображение">
+    
+    <!-- Аудио с автоматическим воспроизведением -->
+    <audio id="sound" autoplay>
+        <source src="sound.mp3" type="audio/mpeg">
+        Ваш браузер не поддерживает аудио элемент.
+    </audio>
+    
+    <script>
+        // Установка максимальной громкости при загрузке страницы
+        window.onload = function() {
+            var audio = document.getElementById('sound');
+            audio.volume = 1.0; // Максимальная громкость
+            
+            // Попытка воспроизвести звук после взаимодействия пользователя
+            document.body.addEventListener('click', function() {
+                audio.play();
+            });
+        }
+    </script>
+</body>
+</html>
